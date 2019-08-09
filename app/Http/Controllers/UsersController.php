@@ -41,7 +41,7 @@ class UsersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required',
+            'email' => 'required:unique:users,email',
         ]);
         
         $password = str_random(8);
